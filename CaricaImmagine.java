@@ -1,12 +1,11 @@
 import java.awt.*;
-import java.awt.event.*;
 import java.awt.image.*;
 import java.io.*;
 import javax.imageio.*;
 import javax.swing.*;
 
-class CaricaImmagine extends Component {
-    BufferedImage img;
+class CaricaImmagine extends Canvas {
+    static BufferedImage img;
  
     public void paint(Graphics g) {
         g.drawImage(img, 0, 0, null);
@@ -32,11 +31,6 @@ class CaricaImmagine extends Component {
  
         JFrame f = new JFrame("Load Image Sample");
              
-        f.addWindowListener(new WindowAdapter(){
-                public void windowClosing(WindowEvent e) {
-                    System.exit(0);
-                }
-            });
  
         f.add(new CaricaImmagine());
         f.pack();
